@@ -49,7 +49,8 @@ traffic-volume-forecasting-uber/
 ├── README.md
 ├── data/
 │   ├── Dataset_Uber_Traffic.csv
-│   └── Integrated_Traffic_Weather_Event_Dataset.csv
+│   ├── Integrated_Traffic_Weather_Event_Dataset.csv
+│   └── Traffic_Dataset_Preprocessed_FeatureEngineered_Yashas.csv
 ├── notebooks/
 │   ├── 01_EDA_feature_engineering.ipynb
 │   └── 02_model_development_evaluation.ipynb
@@ -64,7 +65,13 @@ traffic-volume-forecasting-uber/
     ├── monthly_seasonal.png
     ├── rain_impact_peak.png
     ├── event_impact.png
-    └── radial_traffic_clock.png
+    ├── radial_traffic_clock.png
+    ├── arima_forecast_vs_actual.png
+    ├── gbm_diagnostics.png
+    ├── gbm_feature_importance.png
+    ├── lstm_training_history.png
+    └── residual_bias_by_hour.png
+    
 ```
 
 ## Tech Stack

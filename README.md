@@ -35,6 +35,34 @@ Traffic congestion directly affects ride-sharing pricing (through time-based far
 
 The refined XGBoost model (trained on the top 12 most important features) was the best performer across every metric, explaining ~97% of the variance in hourly traffic volume with an average error of under 3 vehicles/hour.
 
+### Model Diagnostics
+
+**Prediction accuracy, residuals, and error distribution (refined XGBoost model):**
+![GBM diagnostics](charts/gbm_diagnostics.png)
+
+**Feature importance:**
+![Feature importance](charts/gbm_feature_importance.png)
+
+**ARIMA baseline vs actual — misses the daily cycle entirely:**
+![ARIMA forecast vs actual](charts/arima_forecast_vs_actual.png)
+
+**LSTM training history:**
+![LSTM training history](charts/lstm_training_history.png)
+
+**Residual bias by hour of day (used to guide model refinement):**
+![Residual bias by hour](charts/residual_bias_by_hour.png)
+
+## Peak-Hour & Pattern Analysis
+
+**Average hourly traffic volume by junction — Junction 4 peaks at midday, not evening:**
+![Hourly average by junction](charts/hourly_avg_by_junction.png)
+
+**24-hour traffic rhythm, radial view:**
+![Radial traffic clock](charts/radial_traffic_clock.png)
+
+**Traffic intensity heatmap (hour × day of week) per junction:**
+![Heatmap hour vs day of week](charts/heatmap_hour_dow.png)
+
 ## Key Findings
 
 - **Junction 4 breaks the typical rush-hour pattern** — it peaks around midday (12:00–15:00) instead of the evening rush (19:00–21:00) seen at the other three junctions, an insight that only emerged from per-junction analysis.
@@ -49,7 +77,7 @@ traffic-volume-forecasting-uber/
 ├── README.md
 ├── data/
 │   ├── Dataset_Uber_Traffic.csv
-│   ├── Integrated_Traffic_Weather_Event_Dataset.csv
+│   ├── Integrated_Traffic_Weather_Event_Dataset_Yashas.csv
 │   └── Traffic_Dataset_Preprocessed_FeatureEngineered_Yashas.csv
 ├── notebooks/
 │   ├── 01_EDA_feature_engineering.ipynb
@@ -66,12 +94,11 @@ traffic-volume-forecasting-uber/
     ├── rain_impact_peak.png
     ├── event_impact.png
     ├── radial_traffic_clock.png
-    ├── arima_forecast_vs_actual.png
     ├── gbm_diagnostics.png
     ├── gbm_feature_importance.png
+    ├── arima_forecast_vs_actual.png
     ├── lstm_training_history.png
     └── residual_bias_by_hour.png
-    
 ```
 
 ## Tech Stack
